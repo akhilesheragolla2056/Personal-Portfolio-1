@@ -32,27 +32,7 @@
 <body>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script>
-  const filterBtns = document.querySelectorAll("[data-filter-btn]");
-  const filterItems = document.querySelectorAll("[data-filter-item]");
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      let category = btn.textContent.toLowerCase();
-
-      filterBtns.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      filterItems.forEach(item => {
-        if (category === "all" || item.dataset.category === category) {
-          item.classList.add("active");
-        } else {
-          item.classList.remove("active");
-        }
-      });
-    });
-  });
-</script>
 
   <!--
     - #MAIN
@@ -349,7 +329,7 @@
               </figure>
               <h4 class="h4 skills-item-title">Languages</h4>
               <p class="skills-text">
-                C, C++, Java, Python, SQL, LaTeX, x86 Assembly, HTML, SCSS, JavaScript.
+                C, C++, Java, Python, SQL, C#, HTML, SCSS, JavaScript.
               </p>
             </div>
           </li>
@@ -362,20 +342,20 @@
               </figure>
               <h4 class="h4 skills-item-title">Frameworks & Libraries</h4>
               <p class="skills-text">
-                Node.js, Express.js, Bootstrap, Tensorflow, Keras, Sci-Kit Learn, Matplotlib, NLTK.
+                Node.js, Express.js, Bootstrap, Tensorflow, Sci-Kit Learn, Matplotlib, NLTK.
               </p>
             </div>
           </li>
 
-          <!-- Software Tools -->
+          <!-- System Tools -->
           <li class="skills-item">
             <div class="content-card skill-card">
               <figure class="skills-icon-box">
                 <img src="./assets/images/avatar-3.png" alt="Tools icon" class="skills-icon">
               </figure>
-              <h4 class="h4 skills-item-title">Software Tools</h4>
+              <h4 class="h4 skills-item-title">System Tools</h4>
               <p class="skills-text">
-                Git, GitHub, Vercel, Obsidian, Anaconda, Jupyter, Vim, Jenkins.
+                Git, GitHub, Vercel, Netfliy, Obsidian, Anaconda, Jupyter, Jenkins.
               </p>
             </div>
           </li>
@@ -955,29 +935,7 @@
   <!--
     - ionicon link
   -->
-    <script>
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const projects = document.querySelectorAll(".project-item");
-
-  filterButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      // remove active class from all buttons
-      filterButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      const category = btn.getAttribute("data-filter");
-
-      projects.forEach(project => {
-        if (category === "all" || project.classList.contains(category)) {
-          project.style.display = "block";
-        } else {
-          project.style.display = "none";
-        }
-      });
-    });
-  });
-</script>
-
+   
   
 
 

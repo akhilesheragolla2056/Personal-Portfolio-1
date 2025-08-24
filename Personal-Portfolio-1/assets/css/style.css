@@ -16,7 +16,7 @@
   \*-----------------------------------*/
 
   :root {
-
+    
     /**
     * colors
     */
@@ -622,201 +622,184 @@
   * #testimonials 
   */
 
-  .testimonials { margin-bottom: 30px; }
+  /* --------------------
+   Technical Skills
+-------------------- */
 
-  .testimonials-title { margin-bottom: 20px; }
+.technical-skills {
+  margin-bottom: 30px;
+}
 
-  .testimonials-list {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 15px;
-    margin: 0 -15px;
-    padding: 25px 15px;
-    padding-bottom: 35px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    overscroll-behavior-inline: contain;
-    scroll-snap-type: inline mandatory;
-  }
+/* Technical Skills heading */
+.skills-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff;
+}
+.skills-title span {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #FFD700;
+}
 
-  .testimonials-item {
-    min-width: 100%;
-    scroll-snap-align: center;
-  }
+.skills-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  margin: 0;
+  padding: 25px 0;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+}
 
-  .testimonials-avatar-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(15px, -25px);
-    background: var(--bg-gradient-onyx);
-    border-radius: 14px;
-    box-shadow: var(--shadow-1);
-  }
-
-  .testimonials-item-title { margin-bottom: 7px; }
-
-  .testimonials-text {
-    color: var(--light-gray);
-    font-size: var(--fs-6);
-    font-weight: var(--fw-300);
-    line-height: 1.6;
-    display: -webkit-box;
-    line-clamp: 4;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
+.skills-item {
+  flex: 0 0 auto;
+  min-width: 280px;
+  scroll-snap-align: center;
+}
 
 
-  /**
-  * #testimonials-modal
-  */
+.skill-card {
+  background: #1e1e1e;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-  .modal-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    z-index: 20;
-    pointer-events: none;
-    visibility: hidden;
-  }
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
 
-  .modal-container::-webkit-scrollbar { display: none; }
+.skills-icon-box {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+}
 
-  .modal-container.active {
-    pointer-events: all;
-    visibility: visible;
-  }
+.skills-icon {
+  width: 100%;
+  filter: brightness(0) saturate(100%) invert(77%) sepia(56%) saturate(469%) hue-rotate(360deg) brightness(104%) contrast(101%);
+  /* yellow-orange tint */
+}
 
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: hsl(0, 0%, 5%);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    z-index: 1;
-    transition: var(--transition-1);
-  }
+.skills-item-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ffffff; /* change to white */
+  margin-bottom: 10px;
+}
 
-  .overlay.active {
-    opacity: 0.8;
-    visibility: visible;
-    pointer-events: all;
-  }
 
-  .testimonials-modal {
-    background: var(--eerie-black-2);
-    position: relative;
-    padding: 15px;
-    margin: 15px 12px;
-    border: 1px solid var(--jet);
-    border-radius: 14px;
-    box-shadow: var(--shadow-5);
-    transform: scale(1.2);
-    opacity: 0;
-    transition: var(--transition-1);
-    z-index: 2;
-  }
+.skills-text {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
 
-  .modal-container.active .testimonials-modal {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  .modal-close-btn {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: var(--onyx);
-    border-radius: 8px;
-    width: 32px;
-    height: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--white-2);
-    font-size: 18px;
-    opacity: 0.7;
-  }
-
-  .modal-close-btn:hover,
-  .modal-close-btn:focus { opacity: 1; }
-
-  .modal-close-btn ion-icon { --ionicon-stroke-width: 50px; }
-
-  .modal-avatar-box {
-    background: var(--bg-gradient-onyx);
-    width: max-content;
-    border-radius: 14px;
-    margin-bottom: 15px;
-    box-shadow: var(--shadow-2);
-  }
-
-  .modal-img-wrapper > img { display: none; }
-
-  .modal-title { margin-bottom: 4px; }
-
-  .modal-content time {
-    font-size: var(--fs-6);
-    color: var(--light-gray-70);
-    font-weight: var(--fw-300);
-    margin-bottom: 10px;
-  }
-
-  .modal-content p {
-    color: var(--light-gray);
-    font-size: var(--fs-6);
-    font-weight: var(--fw-300);
-    line-height: 1.6;
-  }
 
 
   /**
-  * #clients 
+  * #statistics section
   */
 
-  .clients { margin-bottom: 15px; }
+  /* Statistics Section */
+  /* Reuse Navbar Title Style */
+/* Statistics Section */
+/* Reuse Navbar Title Style */
+/* Statistics Section - same style as Technical Skills */
+/* Statistics same style as Technical Skills */
+/* Statistics section (copied from Technical Skills) */
+.statistics-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff;
+}
+.statistics-title span {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #FFD700;
+}
 
-  .clients-list {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 15px;
-    margin: 0 -15px;
-    padding: 25px;
-    padding-bottom: 25px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    overscroll-behavior-inline: contain;
-    scroll-snap-type: inline mandatory;
-    scroll-padding-inline: 25px;
-  }
 
-  .clients-item {
-    min-width: 50%;
-    scroll-snap-align: start;
-  }
+.stats-list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  margin: 0;
+  padding: 25px 0;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: inline mandatory;
+}
 
-  .clients-item img {
-    width: 100%;
-    filter: grayscale(1);
-    transition: var(--transition-1);
-  }
+/* Each stat card */
+.stats-item {
+  flex: 0 0 auto;
+  min-width: 220px;
+  scroll-snap-align: center;
+}
 
-  .clients-item img:hover { filter: grayscale(0); }
+.stats-card {
+  background: #1e1e1e;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stats-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.stats-item-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FFD700; /* golden yellow */
+  margin-bottom: 10px;
+}
+
+.stats-text {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Scrollbar same as Technical Skills */
+.stats-list::-webkit-scrollbar {
+  height: 4px; /* thin like Technical Skills */
+}
+
+.stats-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.stats-list::-webkit-scrollbar-thumb {
+  background: var(--orange-yellow-crayola);
+  border-radius: 10px;
+}
+
+
+
+
+
 
 
 
@@ -2029,4 +2012,208 @@ article.projects .project-item.active { display: block; }
     .timeline-text { max-width: 700px; }
 
   }
-  
+  /* ---------- ABOUT GRID LAYOUT ---------- */
+.about-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.technical-skills, .statistics {
+  margin-top: 2rem;
+}
+
+
+@media (max-width: 900px) {
+  .about-layout { grid-template-columns: 1fr; }
+  .technical-skills .skills-list { grid-template-columns: 1fr; }
+}
+
+.skill-card {
+  background: var(--eerie-black-2);
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  box-shadow: var(--shadow-3);
+  padding: 20px;
+  position: relative;
+}
+
+.skills-icon-box {
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  background: var(--bg-gradient-onyx);
+  border-radius: 14px;
+  box-shadow: var(--shadow-2);
+  padding: 6px;
+}
+
+.skills-icon {
+  width: 50px;
+  height: 50px;
+  filter: hue-rotate(20deg) saturate(1.1) brightness(1.1);
+}
+
+.skills-item-title { margin-top: 30px; }
+.skills-text { color: var(--light-gray); }
+
+/* ---------- STATISTICS (RIGHT COLUMN) ---------- */
+/* Statistics container matches skills */
+.stats-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stats-item {
+  flex: 1 1 calc(50% - 20px); /* 2 items per row */
+  background: var(--eerie-black-2);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.stats-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--yellow);
+}
+
+.stats-label {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin-top: 5px;
+}
+
+/* Section Title (same as Technical Skills) */
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-title .arrow {
+  color: #f1c40f; /* yellow arrow */
+  font-size: 1.2rem;
+}
+
+/* Statistics Container */
+.stats-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.stats-item {
+  flex: 1 1 220px;
+  background: #1e1e1e;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stats-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.stats-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #f1c40f; /* yellow/orange */
+  margin-bottom: 10px;
+}
+
+.stats-label {
+  font-size: 1rem;
+  color: #ccc;
+}
+.stats-item-title {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #ffffff; /* white like Technical Skills text */
+  margin-top: 10px;
+}
+
+
+/* === FIX: Statistics should behave like Technical Skills === */
+.about .statistics .stats-list {
+  display: flex !important;
+  flex-wrap: nowrap !important;      /* don't wrap to the next line   */
+  gap: 20px;
+  overflow-x: auto;                   /* horizontal scroll             */
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;      /* snap like the skills cards    */
+  padding: 25px 0;
+}
+
+/* scrollbar style */
+.about .statistics .stats-list::-webkit-scrollbar { height: 8px; }
+.about .statistics .stats-list::-webkit-scrollbar-track {
+  background: var(--onyx);
+  border-radius: 8px;
+}
+.about .statistics .stats-list::-webkit-scrollbar-thumb {
+  background: var(--orange-yellow-crayola);
+  border-radius: 8px;
+}
+
+/* cards (same size/feel as skills) */
+.about .statistics .stats-item {
+  flex: 0 0 280px;                    /* fixed width like skills cards */
+  background: var(--eerie-black-2);
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--shadow-2);
+  scroll-snap-align: start;
+}
+
+.about .statistics .stats-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--orange-yellow-crayola);
+}
+
+.about .statistics .stats-label {
+  font-size: 1rem;
+  color: #ccc;
+  margin-top: 6px;
+}
+/* Statistics section scrollbar */
+.stats-list.has-scrollbar {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+
+.stats-list.has-scrollbar::-webkit-scrollbar {
+  height: 4px; /* small size like Technical Skills */
+}
+
+.stats-list.has-scrollbar::-webkit-scrollbar-track {
+  background: transparent; /* hides the white background */
+}
+
+.stats-list.has-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--orange-yellow-crayola); /* yellow color */
+  border-radius: 10px;
+}
+/* Hides the filtered project items */
+.project-item.hide {
+  display: none;
+}

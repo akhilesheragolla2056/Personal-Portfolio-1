@@ -30,7 +30,29 @@
 </head>
 
 <body>
-  
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+  const filterBtns = document.querySelectorAll("[data-filter-btn]");
+  const filterItems = document.querySelectorAll("[data-filter-item]");
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      let category = btn.textContent.toLowerCase();
+
+      filterBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      filterItems.forEach(item => {
+        if (category === "all" || item.dataset.category === category) {
+          item.classList.add("active");
+        } else {
+          item.classList.remove("active");
+        }
+      });
+    });
+  });
+</script>
 
   <!--
     - #MAIN
@@ -1217,29 +1239,7 @@
   <!--
     - ionicon link
   -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script>
-  const filterBtns = document.querySelectorAll("[data-filter-btn]");
-  const filterItems = document.querySelectorAll("[data-filter-item]");
-
-  filterBtns.forEach(btn => {
-    btn.addEventListener("click", () => {
-      let category = btn.textContent.toLowerCase();
-
-      filterBtns.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-
-      filterItems.forEach(item => {
-        if (category === "all" || item.dataset.category === category) {
-          item.classList.add("active");
-        } else {
-          item.classList.remove("active");
-        }
-      });
-    });
-  });
-</script>
+  
 
 
 </body>

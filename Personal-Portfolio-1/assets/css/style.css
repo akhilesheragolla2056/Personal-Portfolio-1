@@ -2207,6 +2207,20 @@ article.projects .project-item.active { display: block; }
 
 /* Better small-screen grids */
 @media (max-width: 480px) {
+  /* Gallery grid */
   .projects .project-list { grid-template-columns: 1fr; gap: 16px; }
   .project-img img { height: 220px; }
+
+  /* Technical Skills: one full card per view with snap */
+  .technical-skills .skills-list {
+    padding: 10px 0;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 16px;
+    gap: 16px;
+  }
+  .technical-skills .skills-item {
+    flex: 0 0 100%;
+    min-width: 100%;
+    scroll-snap-align: start;
+  }
 }

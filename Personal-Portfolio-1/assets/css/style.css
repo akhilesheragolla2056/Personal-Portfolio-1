@@ -968,9 +968,18 @@
   color: #FFD700; /* golden yellow */
   margin-bottom: 10px;
 }
-/* Ensure About > Statistics uses theme yellow for numbers and labels */
-.about .statistics .stat-number { color: var(--orange-yellow-crayola); }
-.about .statistics .stats-item-title { color: var(--orange-yellow-crayola); }
+/* About > Statistics: big yellow numbers, white labels */
+.about .statistics .stat-number {
+  color: var(--orange-yellow-crayola);
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+.about .statistics .stats-item-title {
+  color: var(--white-2);
+  font-size: 1rem;
+  font-weight: 500;
+}
 
 
 
@@ -1162,6 +1171,13 @@
 .skill-item img {
   width: 40px;
   height: 40px;
+}
+
+/* Size inline SVG devicon images used in skills badges */
+.devicon-inline-svg {
+  width: 40px;
+  height: 40px;
+  display: block;
 }
 
 
@@ -2672,6 +2688,33 @@ article.projects .project-item.active { display: block; }
 
 .skills-text { color: var(--light-gray); }
 
+/* Uniform skill icon grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(56px, 1fr));
+  gap: 14px;
+  margin-top: 12px;
+  list-style: none;
+  padding: 0;
+}
+.skill-badge {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  background: var(--eerie-black-2);
+  border: 1px solid var(--jet);
+  border-radius: 12px;
+}
+.skill-badge i { font-size: 28px; }
+/* Make non-colored Devicon icons readable on dark background */
+.skill-badge i:not(.colored) { color: var(--white-2); opacity: 0.95; }
+
+@media (max-width: 600px) {
+  .skills-grid { grid-template-columns: repeat(4, 1fr); }
+  .skill-badge { width: 52px; height: 52px; }
+}
+
 
 
 /* ---------- STATISTICS (RIGHT COLUMN) ---------- */
@@ -2856,6 +2899,18 @@ article.projects .project-item.active { display: block; }
   scroll-behavior: smooth;
 }
 
+/* Mobile: show two stats per view with snap */
+@media (max-width: 480px) {
+  .about .statistics .stats-list {
+    scroll-snap-type: x mandatory;
+  }
+  .about .statistics .stats-item {
+    flex: 0 0 calc(50% - 12px);
+    min-width: calc(50% - 12px);
+    scroll-snap-align: start;
+  }
+}
+
 
 
 .stats-list.has-scrollbar::-webkit-scrollbar {
@@ -2917,8 +2972,10 @@ article.projects .project-item.active { display: block; }
 }
 
 /* Mobile: uniform logo sizing in Resume > My Skills */
-@media (max-width: 480px) {
-  .resume .skills .skills-image-wrapper { height: 200px; }
+@media (max-width: 600px) {
+  .resume .skills .skills-track { display: block; }
+  .resume .skills .skills-category { margin-bottom: 16px; }
+  .resume .skills .skills-image-wrapper { height: 160px; padding: 8px; }
   .resume .skills .skills-image-wrapper img {
     max-height: 100%;
     max-width: 100%;

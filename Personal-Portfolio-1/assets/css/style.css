@@ -2863,6 +2863,27 @@ article.projects .project-item.active { display: block; }
 /* Education degree text */
 .edu-degree { color: #aaa; }
 
+/* Resume My Skills - mobile stacked layout (per mobile design) */
+@media (max-width: 480px) {
+  .resume .skills .skills-track {
+    display: block;
+    overflow: visible;
+    background: var(--border-gradient-onyx);
+    border-radius: 14px;
+    padding: 12px;
+  }
+  .resume .skills .skills-category {
+    min-width: auto;
+    flex: none;
+    margin-bottom: 16px;
+  }
+  .resume .skills .skills-image-wrapper img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
 
 
 /* Mobile viewport fixes and safe area padding */

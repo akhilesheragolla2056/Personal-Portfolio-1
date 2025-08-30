@@ -968,6 +968,9 @@
   color: #FFD700; /* golden yellow */
   margin-bottom: 10px;
 }
+/* Ensure About > Statistics uses theme yellow for numbers and labels */
+.about .statistics .stat-number { color: var(--orange-yellow-crayola); }
+.about .statistics .stats-item-title { color: var(--orange-yellow-crayola); }
 
 
 
@@ -2897,13 +2900,33 @@ article.projects .project-item.active { display: block; }
     flex: none;
     margin-bottom: 16px;
   }
+  .resume .skills .skills-image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--eerie-black-2);
+    border: 1px solid var(--jet);
+    border-radius: 14px;
+    padding: 12px;
+  }
   .resume .skills .skills-image-wrapper img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     object-fit: contain;
   }
 }
 
+/* Mobile: uniform logo sizing in Resume > My Skills */
+@media (max-width: 480px) {
+  .resume .skills .skills-image-wrapper { height: 200px; }
+  .resume .skills .skills-image-wrapper img {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+}
 
 
 /* Mobile viewport fixes and safe area padding */
@@ -2926,7 +2949,13 @@ article.projects .project-item.active { display: block; }
 
   .project-img img { height: 220px; }
 
-
+  /* Gallery page images: keep top in view on phones */
+  article.portfolio .project-img img {
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
+    object-position: center top;
+  }
 
   /* Technical Skills: one full card per view with snap */
   .technical-skills .skills-list {

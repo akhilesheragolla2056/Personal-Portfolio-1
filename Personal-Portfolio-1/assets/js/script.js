@@ -62,8 +62,8 @@ if (navigationLinks.length > 0 && pages.length > 0) {
 // PROJECTS PAGE FILTERING LOGIC (All, Web design, etc.)
 // =======================================================
 
-const filterBtns = document.querySelectorAll("[data-filter-btn]");
-const projectItems = document.querySelectorAll("[data-filter-item]");
+const filterBtns = document.querySelectorAll("article.projects [data-filter-btn]");
+const projectItems = document.querySelectorAll("article.projects [data-filter-item]");
 
 if (filterBtns.length > 0 && projectItems.length > 0) {
   let lastClickedFilterBtn = filterBtns[0];

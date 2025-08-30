@@ -1,4 +1,4 @@
-  /*-----------------------------------*\
+/*-----------------------------------*\
     #style.css
   \*-----------------------------------*/
 
@@ -6,7 +6,6 @@
   /**
   * copyright 2022 @codewithsadee
   */
-
 
 
 
@@ -114,7 +113,6 @@
 
 
 
-
   /*-----------------------------------*\
     #RESET
   \*-----------------------------------*/
@@ -156,7 +154,6 @@
   html { font-family: var(--ff-poppins); }
 
   body { background: var(--smoky-black); }
-
 
 
 
@@ -295,7 +292,6 @@
 
 
 
-
   /*-----------------------------------*\
     #MAIN
   \*-----------------------------------*/
@@ -305,7 +301,6 @@
     margin-bottom: 75px;
     min-width: 259px;
   }
-
 
 
 
@@ -511,7 +506,6 @@
 
 
 
-
   /*-----------------------------------*\
     #NAVBAR
   \*-----------------------------------*/
@@ -548,7 +542,6 @@
   .navbar-link:focus { color: var(--light-gray-70); }
 
   .navbar-link.active { color: var(--orange-yellow-crayola); }
-
 
 
 
@@ -795,12 +788,6 @@
   background: var(--orange-yellow-crayola);
   border-radius: 10px;
 }
-
-
-
-
-
-
 
 
 
@@ -1098,7 +1085,6 @@
 
 
 
-
   /*-----------------------------------*\
     #Achievements
   \*-----------------------------------*/
@@ -1183,7 +1169,6 @@
     line-height: 1.6;
   }
   
-
 
 
 
@@ -1294,7 +1279,6 @@
 
 
 
-
   /*-----------------------------------*\
     #RESPONSIVE
   \*-----------------------------------*/
@@ -1321,7 +1305,6 @@
     .blog-banner-box { height: auto; }
 
   }
-
 
 
 
@@ -1614,7 +1597,6 @@
 
 
 
-
   /**
   * responsive larger than 768px screen
   */
@@ -1714,7 +1696,6 @@ article.projects .project-item.active { display: block; }
     }
     
   }
-
 
 
 
@@ -1833,7 +1814,6 @@ article.projects .project-item.active { display: block; }
 
 
 
-
   /**
   * responsive larger than 1250px screen
   */
@@ -1924,7 +1904,6 @@ article.projects .project-item.active { display: block; }
       opacity: 1;
       visibility: visible;
     }
-
   /* Contact list container */
   .contacts-list {
     display: flex;
@@ -2000,7 +1979,6 @@ article.projects .project-item.active { display: block; }
 .leetcode-icon:hover {
   fill: #fff;
 }
-
 
 
 
@@ -2217,3 +2195,6 @@ article.projects .project-item.active { display: block; }
 .project-item.hide {
   display: none;
 }
+
+/* Education degree text */
+.edu-degree { color: #aaa; }

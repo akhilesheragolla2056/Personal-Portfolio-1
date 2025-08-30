@@ -2198,3 +2198,15 @@ article.projects .project-item.active { display: block; }
 
 /* Education degree text */
 .edu-degree { color: #aaa; }
+
+/* Mobile viewport fixes and safe area padding */
+@supports (padding: max(0px)) {
+  .navbar { padding-bottom: max(0px, env(safe-area-inset-bottom)); }
+  main { margin-bottom: calc(110px + env(safe-area-inset-bottom)); }
+}
+
+/* Better small-screen grids */
+@media (max-width: 480px) {
+  .projects .project-list { grid-template-columns: 1fr; gap: 16px; }
+  .project-img img { height: 220px; }
+}
